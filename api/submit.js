@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const allowedOrigin = "https://liamashworth.github.io";
+  const allowedOrigin = "https://acappaibeta.vercel.app";
 
   res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
