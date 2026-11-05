@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join the ACAPPAI Beta</title>
+<meta name="description" content="Become an ACAPPAI beta tester and get full Plus access for free. AI training sessions and Matchday analysis for football coaches.">
+<meta name="theme-color" content="#14131f">
+<link rel="icon" href="C:\Users\t14\coach-ai\assets\google-play-store-icon.png" type="image/png">
+<style>
+  :root {
+    --bg: #14131f;
+    --bg2: #1c1a2e;
+    --card: #22203a;
+    --border: #36335a;
+    --purple: #534AB7;
+    --purple-light: #7c75e0;
+    --tint: #AFA9EC;
+    --text: #f4f3fb;
+    --muted: #a6a4c4;
+    --green: #22C55E;
+    --red: #f87171;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(600px 400px at 85% 0%, rgba(83,74,183,0.35), transparent 70%),
+      radial-gradient(500px 400px at 0% 40%, rgba(124,117,224,0.18), transparent 70%),
+      radial-gradient(700px 500px at 100% 100%, rgba(83,74,183,0.25), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* Hero */
+  header { text-align: center; padding: 48px 0 24px; }
+  .logo-badge {
+    width: 128px; height: 128px; border-radius: 50%;
+    background: #ffffff;
+    margin: 0 auto 24px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 6px rgba(83,74,183,0.35), 0 20px 50px rgba(0,0,0,0.45);
+    overflow: hidden;
+    animation: float 5s ease-in-out infinite;
+  }
+  .logo-badge img { width: 118%; height: 118%; object-fit: contain; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .tag {
+    display: inline-block;
+    background: rgba(83,74,183,0.25);
+    border: 1px solid var(--purple);
+    color: var(--tint);
+    font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+  }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.1; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 16px; }
+  h1 span { background: linear-gradient(90deg, #AFA9EC, #7c75e0 50%, #22C55E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { font-size: clamp(16px, 2.4vw, 19px); color: var(--muted); max-width: 640px; margin: 0 auto 26px; }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; cursor: pointer; border: 0;
+    background: linear-gradient(135deg, #6a60d8, #534AB7);
+    color: #fff; font-weight: 800; font-size: 16px;
+    padding: 15px 30px; border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(83,74,183,0.5);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(83,74,183,0.65); }
+  .btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+  .value-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.4);
+    color: #86efac; font-weight: 700; font-size: 14px;
+    padding: 8px 16px; border-radius: 999px; margin-top: 20px;
+  }
+
+  /* Perks */
+  .perks { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 40px 0; }
+  .perk {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 22px;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .perk:hover { transform: translateY(-4px); border-color: var(--purple-light); }
+  .perk .ico {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(83,74,183,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 14px;
+  }
+  .perk h3 { font-size: 16px; margin-bottom: 6px; }
+  .perk p { font-size: 14px; color: var(--muted); }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 44px; }
+  .step { display: flex; gap: 14px; align-items: flex-start; }
+  .num {
+    flex: 0 0 38px; height: 38px; border-radius: 50%;
+    background: var(--purple); color: #fff; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step h4 { font-size: 15px; }
+  .step p { font-size: 13.5px; color: var(--muted); }
+  .section-title { text-align: center; font-size: 26px; font-weight: 800; margin-bottom: 22px; }
+
+  /* Form */
+  .form-card {
+    background: linear-gradient(180deg, var(--card), var(--bg2));
+    border: 1px solid var(--border); border-radius: 24px;
+    padding: clamp(22px, 5vw, 44px);
+    max-width: 720px; margin: 0 auto;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+  }
+  .form-card h2 { font-size: 28px; margin-bottom: 6px; text-align: center; }
+  .form-card .sub { text-align: center; color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .grid2 { grid-template-columns: 1fr; } }
+  .field { margin-bottom: 18px; }
+  label.lbl, .lbl { display: block; font-weight: 700; font-size: 14px; margin-bottom: 7px; }
+  .lbl small { font-weight: 500; color: var(--muted); }
+  input[type=text], input[type=email], select, textarea {
+    width: 100%; background: #15142a; color: var(--text);
+    border: 1.5px solid var(--border); border-radius: 12px;
+    padding: 13px 14px; font-size: 16px; font-family: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  textarea { min-height: 110px; resize: vertical; }
+  input::placeholder, textarea::placeholder { color: #6f6d92; }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: var(--purple-light);
+    box-shadow: 0 0 0 4px rgba(124,117,224,0.22);
+  }
+  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #a6a4c4 50%), linear-gradient(135deg, #a6a4c4 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { position: relative; }
+  .chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; width: 100%; height: 100%; }
+  .chip span {
+    display: inline-block; padding: 10px 18px; border-radius: 999px;
+    background: #15142a; border: 1.5px solid var(--border);
+    font-weight: 600; font-size: 14px; color: var(--muted);
+    transition: all .15s ease;
+  }
+  .chip input:checked + span { background: var(--purple); border-color: var(--purple); color: #fff; }
+  .chip input:focus-visible + span { box-shadow: 0 0 0 4px rgba(124,117,224,0.3); }
+
+  .consent { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--muted); margin: 8px 0 22px; }
+  .consent input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--purple); flex: 0 0 auto; }
+  .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+  .submit { width: 100%; font-size: 17px; padding: 17px; }
+  .note { text-align: center; font-size: 12.5px; color: var(--muted); margin-top: 14px; }
+  .error { display: none; background: rgba(248,113,113,0.12); border: 1px solid rgba(248,113,113,0.5); color: #fecaca; padding: 12px 14px; border-radius: 12px; margin-bottom: 16px; font-size: 14px; }
+
+  /* Success */
+  .success { display: none; text-align: center; padding: 20px 0; }
+  .success .tick {
+    width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 20px;
+    background: rgba(34,197,94,0.15); border: 2px solid var(--green);
+    display: flex; align-items: center; justify-content: center; font-size: 42px; color: var(--green);
+    animation: pop .5s cubic-bezier(.2,1.4,.4,1);
+  }
+  @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
+  .success h2 { margin-bottom: 10px; }
+  .success p { color: var(--muted); max-width: 440px; margin: 0 auto 8px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 50px; }
+  footer a { color: var(--tint); text-decoration: none; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .logo-badge { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-badge">
+      <img src="C:\Users\t14\coach-ai\assets\google-play-store-icon.png" alt="ACAPPAI logo">
+    </div>
+    <div class="tag">Beta testers wanted</div>
+    <h1>Help us build the future of <span>football coaching</span></h1>
+    <p class="lead">Join the ACAPPAI beta and get full Plus access, completely free. Plan smarter training sessions with AI, rate your players and know your squad like never before.</p>
+    <div class="cta-row">
+      <a class="btn" href="#signup">Become a beta tester</a>
+    </div>
+    <div class="value-pill">🎁 Usually £9.99 a month, yours free indefinitely</div>
+  </header>
+
+  <section class="perks reveal">
+    <div class="perk">
+      <div class="ico">⚡</div>
+      <h3>AI session planning</h3>
+      <p>Describe what you need and get a full session with drills, structure and coaching points in seconds.</p>
+    </div>
+    <div class="perk">
+      <div class="ico">📊</div>
+      <h3>Matchday analysis</h3>
+      <p>Build lineups, rate players and see performance heatmaps and best performer rankings.</p>
+    </div>
+    <div class="perk">
+      <div class="ico">🧠</div>
+      <h3>Smarter with every match</h3>
+      <p>Your match ratings shape your training suggestions, so sessions target your real weaknesses.</p>
+    </div>
+    <div class="perk">
+      <div class="ico">🗣️</div>
+      <h3>Shape the app</h3>
+      <p>Your feedback goes straight to the team and decides what we build next.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2 class="section-title">How it works</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div><h4>Fill in the form</h4><p>It takes about two minutes.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h4>We get in touch</h4><p>We email you your beta access details.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h4>Coach and test</h4><p>Use the full app with your own team.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h4>Share your thoughts</h4><p>Tell us what works and what could be better.</p></div></div>
+    </div>
+  </section>
+
+  <section id="signup" class="reveal">
+    <div class="form-card">
+
+      <div id="formArea">
+        <h2>Join the beta</h2>
+        <p class="sub">Tell us a little about you and your team.</p>
+
+        <div class="error" id="errorBox" role="alert">Something went wrong sending your form. Please check your connection and try again.</div>
+
+        <form id="betaForm" novalidate>
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="grid2">
+            <div class="field">
+              <label class="lbl" for="firstName">First name</label>
+              <input type="text" id="firstName" name="First name" placeholder="e.g. Sam" required autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label class="lbl" for="lastName">Last name</label>
+              <input type="text" id="lastName" name="Last name" placeholder="e.g. Taylor" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+
+
+          <div class="grid2">
+            <div class="field">
+              <label class="lbl" for="role">Your coaching role</label>
+              <select id="role" name="Role" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Head coach</option>
+                <option>Assistant coach</option>
+                <option>Grassroots volunteer</option>
+                <option>Academy coach</option>
+                <option>Parent coach</option>
+                <option>Teacher or PE lead</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="lbl" for="format">Team format</label>
+              <select id="format" name="Team format" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>5 a side</option>
+                <option>7 a side</option>
+                <option>9 a side</option>
+                <option>11 a side</option>
+                <option>I coach more than one</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label class="lbl" for="age">Age group you coach</label>
+              <select id="age" name="Age group" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Foundation (ages 5 to 11)</option>
+                <option>Youth (ages 12 to 16)</option>
+                <option>Professional (ages 17 and over)</option>
+                <option>A mix of age groups</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="lbl" for="club">Club or team name <small>(optional)</small></label>
+              <input type="text" id="club" name="Club or team" placeholder="e.g. Riverside Juniors">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="lbl">What are you most excited to try? <small>(pick any)</small></div>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="Interests" value="AI training sessions"><span>AI training sessions</span></label>
+              <label class="chip"><input type="checkbox" name="Interests" value="Lineup builder"><span>Lineup builder</span></label>
+              <label class="chip"><input type="checkbox" name="Interests" value="Player ratings"><span>Player ratings</span></label>
+              <label class="chip"><input type="checkbox" name="Interests" value="Heatmaps"><span>Heatmaps</span></label>
+              <label class="chip"><input type="checkbox" name="Interests" value="AI match analysis"><span>AI match analysis</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="why">What is your biggest coaching challenge right now? <small>(optional)</small></label>
+            <textarea id="why" name="Biggest challenge" placeholder="For example, planning sessions quickly, tracking player progress, or finding fresh ideas."></textarea>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="source">How did you hear about AcappAI?</label>
+            <select id="source" name="Heard about us">
+              <option value="" disabled selected>Choose one</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>A friend or fellow coach</option>
+              <option>Coaching group or forum</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" name="Agreed to give feedback" value="Yes" required>
+            <span>I agree to use the app during the beta, share honest feedback, and be contacted by email about my beta access.</span>
+          </label>
+
+          <button type="submit" class="btn submit" id="submitBtn">Claim my free Plus access</button>
+          <p class="note">No payment details needed. We only use your information to run the beta.</p>
+        </form>
+      </div>
+
+      <div class="success" id="successBox" role="status">
+        <div class="tick">✓</div>
+        <h2>You are on the list!</h2>
+        <p>Thanks for joining the ACAPPAI beta. We will email you shortly with your access details.</p>
+        <p>Keep an eye on your inbox, and check your spam folder just in case.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p style="margin-top:6px">© 2026 ACAPPAI</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Scroll reveal (single observer, disconnected after use)
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Logo fallback if the file is missing
+  var logo = document.querySelector('.logo-badge img');
+  logo.addEventListener('error', function () {
+    logo.parentNode.innerHTML = '<span style="font-weight:900;font-size:34px;color:#534AB7">AC</span>';
+  });
+
+  // Form handling via FormSubmit (delivers each entry to your inbox)
+  var TO = ['ACAPP.AI', 'protonmail.com'].join('@');
+  var ENDPOINT = 'https://formsubmit.co/ajax/' + TO;
+
+  var form = document.getElementById('betaForm');
+  var btn = document.getElementById('submitBtn');
+  var errorBox = document.getElementById('errorBox');
+  var formArea = document.getElementById('formArea');
+  var successBox = document.getElementById('successBox');
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    errorBox.style.display = 'none';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    var data = new FormData(form);
+    var payload = {};
+    data.forEach(function (value, key) {
+      if (key === 'Interests') {
+        payload[key] = payload[key] ? payload[key] + ', ' + value : value;
+      } else {
+        payload[key] = value;
+      }
+    });
+    payload['_subject'] = 'New AcappAI beta tester: ' + payload['First name'] + ' ' + payload['Last name'];
+    payload['_template'] = 'table';
+    payload['_captcha'] = 'false';
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, body: j }; }); })
+    .then(function (res) {
+      if (res.ok && String(res.body.success) !== 'false') {
+        formArea.style.display = 'none';
+        successBox.style.display = 'block';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error('Submit failed');
+      }
+    })
+    .catch(function () {
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Claim my free Plus access';
+    });
+  });
+})();
+</script>
+</body>
+</html>
