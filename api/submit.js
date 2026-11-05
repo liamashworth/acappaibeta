@@ -40,7 +40,10 @@ export default async function handler(req, res) {
 
     const result = await response.json();
 
-    return res.status(response.status).json(result);
+    return res.status(response.status).json({
+  formsubmitStatus: response.status,
+  formsubmitResponse: result
+});
 
   } catch (error) {
     console.error(error);
