@@ -38,12 +38,25 @@ export default async function handler(req, res) {
       }
     );
 
-    const result = await response.json();
+   const responseText = await response.text();
 
-    return res.status(response.status).json({
-  formsubmitStatus: response.status,
-  formsubmitResponse: result
-});
+console.log("FormSubmit status:", response.status);
+console.log("FormSubmit response:", responseText);
+
+let result;
+
+try {
+  result = JSON.parse(responseText);
+} catch {
+  return res.status(502).json({
+    success: false,
+    message: "FormSubmit returned a non-JSON response",
+    formsubmitStatus: response.status,
+    formsubmitResponse: responseText.slice(0, 1000)
+  });
+}
+
+return res.status(response.status).json(result);
 
   } catch (error) {
     console.error(error);
