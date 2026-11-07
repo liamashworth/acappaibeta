@@ -128,6 +128,43 @@
   .field { margin-bottom: 18px; }
   label.lbl, .lbl { display: block; font-weight: 700; font-size: 14px; margin-bottom: 7px; }
   .lbl small { font-weight: 500; color: var(--muted); }
+
+  /* Help button + popover */
+  .lbl-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .lbl-row .lbl { margin-bottom: 0; }
+  .help-btn {
+    width: 22px; height: 22px; flex: 0 0 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--tint);
+    background: transparent;
+    color: var(--tint);
+    font: 700 13px/1 inherit;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    opacity: .8;
+    transition: background .15s ease, color .15s ease, opacity .15s ease;
+  }
+  .help-btn:hover, .help-btn[aria-expanded="true"] { opacity: 1; background: var(--purple); border-color: var(--purple); color: #fff; }
+  .help-btn:focus-visible { outline: none; box-shadow: 0 0 0 4px rgba(124,117,224,0.3); }
+  .help-pop {
+    margin: 0 0 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--purple-light);
+    border-radius: 12px;
+    background: rgba(83,74,183,0.15);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .help-pop[hidden] { display: none; }
+  .help-pop p { margin: 0 0 6px; }
+  .help-pop ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .help-pop li { margin-bottom: 4px; }
+  .help-pop strong { color: var(--text); }
+
   input[type=text], input[type=email], select, textarea {
     width: 100%; background: #15142a; color: var(--text);
     border: 1.5px solid var(--border); border-radius: 12px;
@@ -257,7 +294,24 @@
           </div>
 
           <div class="field">
-            <label class="lbl" for="email">Email address</label>
+            <div class="lbl-row">
+              <label class="lbl" for="email">Google Playstore email address</label>
+              <button type="button" class="help-btn" id="emailHelpBtn"
+                      aria-label="Help: which email address to use"
+                      aria-expanded="false" aria-controls="emailHelp">?</button>
+            </div>
+
+            <div class="help-pop" id="emailHelp" role="region" hidden>
+              <p><strong>Which email do I enter?</strong></p>
+              <p>Enter the Google account email you use to sign in to the Google Play Store on your Android device. This is the account your purchases and app downloads are linked to.</p>
+              <p><strong>Not sure which one it is?</strong></p>
+              <ul>
+                <li>Open the <strong>Play Store</strong> app and tap your <strong>profile picture</strong> (top right). Your email is shown under your name.</li>
+                <li>Or go to <strong>Settings &gt; Google</strong> (or <strong>Settings &gt; Accounts</strong>) on your phone to see the accounts signed in on the device.</li>
+                <li>If you have several accounts, use the one shown in the Play Store.</li>
+              </ul>
+            </div>
+
             <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
           </div>
 
@@ -378,6 +432,18 @@
   var logo = document.querySelector('.logo-badge img');
   logo.addEventListener('error', function () {
     logo.parentNode.innerHTML = '<span style="font-weight:900;font-size:34px;color:#534AB7">AC</span>';
+  });
+
+  // Email help button
+  var helpBtn = document.getElementById('emailHelpBtn');
+  var helpPop = document.getElementById('emailHelp');
+  function setHelpOpen(open) {
+    helpPop.hidden = !open;
+    helpBtn.setAttribute('aria-expanded', String(open));
+  }
+  helpBtn.addEventListener('click', function () { setHelpOpen(helpPop.hidden); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setHelpOpen(false);
   });
 
   // Form handling via FormSubmit (delivers each entry to your inbox)
